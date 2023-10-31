@@ -67,7 +67,7 @@ public class UserDaoJDBCImpl implements UserDao {
     @Override
     public void removeUserById(long id) {
         try (PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM newdatabase WHERE id = ?")) {
-            connection.setAutoCommit(true);
+            connection.setAutoCommit(true   );
             preparedStatement.setLong(1, id);
 
             preparedStatement.executeUpdate();
